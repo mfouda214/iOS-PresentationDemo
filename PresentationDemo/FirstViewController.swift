@@ -23,7 +23,7 @@ class FirstViewController: UIViewController {
 
     @IBAction func showAlertButtonTapped(_ sender: UIButton) {
         
-        let alertController = UIAlertController(title: "Confirm?", message: "Would you like to confirm this action?", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Confirm?", message: "Would you like to confirm this action?", preferredStyle: .actionSheet)
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (alert) in
             print("User tapped Cancel")
@@ -33,14 +33,10 @@ class FirstViewController: UIViewController {
             print("User tapped Yes")
         })
         
-//        let noAction = UIAlertAction(title: "No", style: .default, handler: { (alert) in
-//            print("User tapped No")
-//        })
-        
         alertController.addAction(cancelAction)
         alertController.addAction(yesAction)
-//        alertController.addAction(noAction)
-        
+
+       
         present(alertController, animated: true, completion: nil)
         
     }
