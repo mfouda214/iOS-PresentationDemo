@@ -36,7 +36,10 @@ class FirstViewController: UIViewController {
         alertController.addAction(cancelAction)
         alertController.addAction(yesAction)
 
-       
+        // solve iPad Alerts view
+        alertController.popoverPresentationController?.sourceRect = sender.frame
+        alertController.popoverPresentationController?.sourceView = view
+        
         present(alertController, animated: true, completion: nil)
         
     }
