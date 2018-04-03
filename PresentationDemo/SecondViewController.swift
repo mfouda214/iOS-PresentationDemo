@@ -22,6 +22,13 @@ class SecondViewController: UIViewController {
     }
     
     @IBAction func actionButtonTapped(_ sender: UIBarButtonItem) {
+            let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let viewController = storyboard.instantiateViewController(withIdentifier: "InformationViewController")
+            viewController.modalPresentationStyle = .popover
+            let popover: UIPopoverPresentationController = viewController.popoverPresentationController!
+            popover.barButtonItem = sender
+            present(viewController, animated: true, completion:nil)
+        
     }
 
 
